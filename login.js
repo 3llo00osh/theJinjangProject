@@ -19,15 +19,30 @@ firebase.auth().onAuthStateChanged(function(user){
     }
 });
 
+function signup(){
+
+  var uUsernameS = document.getElementById("username_fieldS").value;
+  var uEmailS = document.getElementById("email_fieldS").value;
+  var uPassword = document.getElementById('password_fieldS').value;
+  var uPasswordRe = document.getElementById('RePassword_fieldS').value;
+
+  firebase.auth().createUserWithEmailAndPassword(uEmailS, uPassword).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+
+  window.alert("Error: " + errorMessage);
+  });
+}
+
 function login(){
   var uUsername = document.getElementById("username_field").value;
   var uPassword = document.getElementById('password_field').value;
 
   firebase.auth().signInWithEmailAndPassword(uUsername, uPassword).catch(function(error) {
-    // Handle Errors here.
+
     var errorCode = error.code;
     var errorMessage = error.message;
-    // ...
 
     window.alert("Error: " + errorMessage);
   });
