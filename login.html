@@ -1,100 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" >
 <head>
-  <link rel="shortcut icon" href="">
-  <link rel="stylesheet" type="text/css" href="css/demo.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>The Jinjang Project - Login</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Welcome to<span> The Jinjang Project</span></h1>
-    </header>
-    <section>
-      <div id="container_demo" >
-        <!--Hidden anchor for the buttons-->
-        <a class="hiddenanchor" id="toregister"></a>
-        <a class="hiddenanchor" id="tologin"></a>
-        <div id="wrapper">
-
-          <!--Login Form -->
-          <div id="login" class="animate form">
-            <div >
-              <h1>Log in</h1>
-              <p>
-                <label for="username" class="uname" data-icon="u" > Your email
-                  or username </label>
-                <input id="username_field" name="username" required="required" type="text"
-                 placeholder="Your Username / Email"/>
-              </p>
-              <p>
-                <label for="password" class="youpasswd" data-icon="p"> Your password
-                </label>
-                <input id="password_field" name="password" required="required" type="password"
-                 placeholder="Your password" />
-              </p>
-              <p class="keeplogin">
-                <input type="checkbox" name="loginkeeping" id="loginkeeping"
-                value="loginkeeping" />
-                <label for="loginkeeping">Keep me logged in</label>
-              </p>
-              <p class="login button">
-                <input type="submit" value="Login" onclick="login()"/>
-              </p>
-              <p class="change_link">
-                Not a member yet ?
-                <a href="#toregister" class="to_register">Join us</a>
-              </p>
-            </div>
-          </div>
-
-          <!--Sign up Form -->
-          <div id="register" class="animate form">
-            <div  action="" autocomplete="on">
-              <h1> Sign up </h1>
-              <p>
-                <label for="usernamesignup" class="uname" data-icon="u">Your username
-                </label>
-                <input id="username_fieldS" name="usernamesignup" required="required"
-                 type="text" placeholder="Your Username" />
-              </p>
-              <p>
-                <label for="emailsignup" class="youmail" data-icon="e" > Your email
-                </label>
-                <input id="email_fieldS" name="emailsignup" required="required"
-                type="email" placeholder="Your Email"/>
-              </p>
-              <p>
-                <label for="passwordsignup" class="youpasswd" data-icon="p">Your
-                  password </label>
-                <input id="password_fieldS" name="passwordsignup" required="required"
-                 type="password" placeholder="Your Password"/>
-              </p>
-              <p>
-                <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">
-                  Please confirm your password </label>
-                <input id="RePassword_fieldS" name="passwordsignup_confirm"
-                 required="required" type="password" placeholder="Re-enter your Password"/>
-              </p>
-              <p class="signin button">
-                <input type="submit" value="Sign up" onclick="signup()"/>
-              </p>
-              <p class="change_link">
-                Already a member ?
-                <a href="#tologin" class="to_register"> Log in now!</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div id="user-div" class="loggedin-div">
-      <p id="user_para"></p>
-      <button onClick="logout()">Logout</button>
-    </div>
+  <div>
+    <h2>Log In</h2>
+    <p>
+      <label for="Email" class="floatLabel">Email</label>
+      <input id="email_field" name="Email" type="text">
+    </p>
+    <p>
+      <label for="password" class="floatLabel">Password</label>
+      <input id="password_field" name="password" type="password">
+      <span>Password length at least 6 characters</span>
+    </p>
+    <p>
+      <input type="submit" value="Login" id="submit" onclick="login()">
+    </p>
   </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="js/signup.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
   <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -108,6 +37,5 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script src="login.js"></script>
 </body>
 </html>
