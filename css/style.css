@@ -12,14 +12,24 @@ div {
   box-shadow: 0 0 1em #222;
   border-radius: 2px;
 }
+
+div h1 {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  text-align: center;
+  font-size: 32px;
+  color: #666666;
+}
+
 div h2 {
   margin: 0 0 50px 0;
   padding: 10px;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: #666666;
   border-bottom: solid 1px #e5e5e5;
 }
+
 div p {
   margin: 0 0 3em 0;
   position: relative;

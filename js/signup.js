@@ -1,18 +1,37 @@
 function signup(){
   var database = firebase.database();
-  var databaseRef = firebase.database().ref("Users")
+
   var uNameS = document.getElementById("name_fieldS").value;
   var uEmailS = document.getElementById("email_fieldS").value;
-  var uPasswordS = document.getElementById('password_fieldS').value;
-  var uRePasswordS = document.getElementById('passwordRe_fieldS').value;
+  var uPasswordS = document.getElementById("password_fieldS").value;
+  var uRePasswordS = document.getElementById("passwordRe_fieldS").value;
+
+  var databaseRef = firebase.database().ref("Users");
+  if(document.getElementById('userType_Mother').checked){
+    var uid = databaseRef.child("Mothers");
+    uid.push({
+      email: uEmailS,
+      name: uNameS,
+      password: uPasswordS
+    });
+  }
+  else if(document.getElementById('userType_Client').checked){
+    var uid = databaseRef.child("Clients");
+    uid.push({
+      email: uEmailS,
+      name: uNameS,
+      password: uPasswordS
+    });
+  }
 
   firebase.auth().createUserWithEmailAndPassword(uEmailS, uPasswordS).catch(function(error) {
+      window.alert("Account created for the email " + uEmailS + " !");
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       window.alert("Error: " + errorMessage);
   });
-  window.alert("Account created for the email " + uEmailS + " !");
+
   document.getElementById('name_fieldS').value='';
   document.getElementById('email_fieldS').value='';
   document.getElementById('password_fieldS').value='';
@@ -28,6 +47,7 @@ function login(){
     var errorMessage = error.message;
     window.alert("Error: " + errorMessage);
   });
+  window.alert(uEmail + " successfully logged in!");
 }
 
 //Problem: Hints are shown even when form is valid
