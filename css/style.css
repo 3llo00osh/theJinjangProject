@@ -1,12 +1,16 @@
+.clientsParam{
+  display: none;
+}
+
 body {
   background: #384047;
   font-family: sans-serif;
   font-size: 10px;
 }
 
-div {
+div:not(.mothersParam) {
   background: #fff;
-  padding: 4em 4em 2em;
+  padding: 1em 5em 2em;
   max-width: 400px;
   margin: 50px auto 0;
   box-shadow: 0 0 1em #222;
@@ -22,27 +26,35 @@ div h1 {
 }
 
 div h2 {
-  margin: 0 0 50px 0;
-  padding: 10px;
+  margin: 0 0 20px 0;
+  padding: 20px;
   text-align: center;
   font-size: 25px;
   color: #666666;
   border-bottom: solid 1px #e5e5e5;
 }
 
-div p {
+div p, form {
   margin: 0 0 3em 0;
   position: relative;
 }
-div input {
+textarea{
+  resize: none;
+}
+div input:not(.userType ),
+textarea, button{
   display: block;
   box-sizing: border-box;
   width: 100%;
   outline: none;
   margin: 0;
 }
+
 div input[type="text"],
-div input[type="password"] {
+div input[type="password"],
+div input[type="tel"],
+div input[type="date"],
+textarea {
   background: #fff;
   border: 1px solid #dbdbdb;
   font-size: 1.6em;
@@ -59,7 +71,8 @@ div span {
   padding: 2px 5px;
   color: #666;
 }
-div input[type="submit"] {
+div input[type="submit"],
+div button {
   background: rgba(148, 186, 101, 0.7);
   box-shadow: 0 3px 0 0 rgba(123, 163, 73, 0.7);
   border-radius: 2px;
@@ -74,7 +87,8 @@ div input[type="submit"] {
   padding: .8em 0;
   text-shadow: 0 1px #68B25B;
 }
-div input[type="submit"]:hover {
+div input[type="submit"]:hover ,
+div button:hover{
   background: #94af65;
   text-shadow: 0 1px 3px rgba(70, 93, 41, 0.7);
 }
