@@ -8,7 +8,7 @@ function signup(){
   var uAddressS = document.getElementById("address_fieldS").value;
   var uDOBS = document.getElementById("dob_fieldS").value;
   var uContact = document.getElementById("contact_fieldS").value;
-  var uBusinessDesc = document.getElementById('id')
+  var uBusinessDesc = document.getElementById('businessDesc_fieldS').value;
 
   var form = document.getElementById("param1"),
   inputs = form.getElementsByTagName("input"),

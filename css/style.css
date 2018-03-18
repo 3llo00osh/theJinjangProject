@@ -73,8 +73,8 @@ div span {
 }
 div input[type="submit"],
 div button {
-  background: rgba(148, 186, 101, 0.7);
-  box-shadow: 0 3px 0 0 rgba(123, 163, 73, 0.7);
+  background: grey;
+  box-shadow: 0 3px 0 0 grey;
   border-radius: 2px;
   border: none;
   color: #fff;
@@ -85,12 +85,12 @@ div button {
   margin: 2em 0 0;
   outline: none;
   padding: .8em 0;
-  text-shadow: 0 1px #68B25B;
+  text-shadow: 0 1px grey;
 }
 div input[type="submit"]:hover ,
 div button:hover{
-  background: #94af65;
-  text-shadow: 0 1px 3px rgba(70, 93, 41, 0.7);
+  background: grey;
+  text-shadow: 0 1px 3px;
 }
 div label {
   position: absolute;
