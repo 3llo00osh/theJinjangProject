@@ -81,12 +81,22 @@ function signup(){
     var uEmail = document.getElementById("email_field").value;
     var uPassword = document.getElementById('password_field').value;
 
-    firebase.auth().signInWithEmailAndPassword(uEmail, uPassword).catch(function(error) {
+    firebase.auth().signInWithEmailAndPassword(uEmail, uPassword).then(
+      function(user){
+        console.log('Everything went fine');
+        window.alert(uEmail + " successfully logged in!");
+
+        firebase.auth().onAuthStateChanged(user =>{
+          if(user){
+            window.location = 'userProfile.html';
+            editProfile();
+          }
+        });
+      }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       window.alert("Error: " + errorMessage);
     });
-    window.alert(uEmail + " successfully logged in!");
   }
 
   //Problem: Hints are shown even when form is valid
