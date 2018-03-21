@@ -142,7 +142,9 @@ function signup(){
   }
 
   //When event happens on password input
-  $password.focus(passwordEvent).keyup(passwordEvent).keyup(confirmPasswordEvent);
+  $password.focus(passwordEvent).keyup(passwordEvent).
+  keyup(confirmPasswordEvent);
 
   //When event happens on confirmation input
-  $confirmPassword.focus(confirmPasswordEvent).keyup(confirmPasswordEvent);
+  $confirmPassword.focus(confirmPasswordEvent).
+  keyup(confirmPasswordEvent);
