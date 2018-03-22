@@ -65,7 +65,7 @@
     </p>
     <p class= "mothersParam" id="param1">
       <label class="floatLabel">Select your Skills</label><br />
-      <input type="checkbox" name="skills[]" id="skillsS" value="Cooking"
+      <input type="checkbox" name="skills[]" value="Cooking"
       class="skills"/>Cooking
       <input type="checkbox" name="skills[]" value="Handcraft"
       class="skills"/>Handcraft

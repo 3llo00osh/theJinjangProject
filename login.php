@@ -9,7 +9,7 @@
 <body>
   <div>
     <h2>Log In Now!</h2>
-    <form method="post" action="login.php">
+    <form method="POST" action="loginPHP.php">
     <p>
       <label for="Email" class="floatLabel">Email</label>
       <input id="email_field" name="Email" type="text">
