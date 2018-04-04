@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<title>Create A Job</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+}
+.bgimg {
+    background-position: center;
+    background-size: cover;
+    background-image: url("images/gallery3.jpg");
+    min-height: 75%;
+}
+.menu {
+    display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="home.html" class="w3-button w3-block w3-black">Home</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">Information on the Community</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="howyoucanhelp.html" class="w3-button w3-block w3-black">How you can help</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="donations.html" class="w3-button w3-block w3-black">Donations</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="newsevents.html" class="w3-button w3-block w3-black">News/Past Events</a>
+    </div>
+  </div>
+</div>
+
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">the<br>Jinjang<br>Project</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="jobcreation">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Create A Job</span></h5>
+
+    <form action="serverconnect.php" id="createjobform" class="form-horizontal" role="form">
+
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Job Name:</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text" id="name_field" name="jobname">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-lg-3 control-label">Job Description:</label>
+        <div class="col-lg-8">
+          <input class="form-control" type="text" id="desc_field" name="jobdesc">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Job Location:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="text" id="loc_field" name="jobloc">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label">Date:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="date" id="date_field" name="date">
+        </div>
+      </div>
+
+      <div class="form-inline">
+        <label class="col-md-3 control-label">Duration:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="number" id="dob_field" name="duration"> days
+        </div>
+      </div>
+
+      <div class="form-inline">
+        <label class="col-md-3 control-label">Pay Rate:</label>
+        <div class="col-md-8">
+          <input class="form-control" type="number" id="payrate_field" name="payrate"> per hour
+        </div>
+      </div>
+
+      <button type="button">Confirm</button>
+
+      <button type="reset" onclick="clearFunction()" value="Clear">Clear</button>
+
+      <button type="button">Cancel</button>
+
+  </form>
+
+  <script>
+  function clearFunction() {
+    document.getElementById("createjobform").reset();
+  }
+</script>
+
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+</body>
+</html>
