@@ -19,9 +19,13 @@ if(isset($_POST['login_btn'])){
     $_SESSION['email'] = $email;
     header('location: motherProfile.php');
     //header('location: index.php');
-  }else{
-    $message = "Wrong username or password";
+  }else if($email == '' || $password == ''){
+    $message = "Please fill in both fields";
     echo "<script type='text/javascript'>alert('$message');
+    window.location.href = 'login.php'</script>";
+  }else{
+    $message2 = "Wrong username or password";
+    echo "<script type='text/javascript'>alert('$message2');
     window.location.href = 'login.php'</script>";
   }
 }

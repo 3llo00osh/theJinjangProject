@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>The Jinjang Project - Signup</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/jQuery.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jQuery.js"></script>
   <script>
   $(document).ready(function() {
     $("#userType_Mother").on('click', function(){
@@ -22,7 +22,7 @@
 <body>
   <div>
     <h2>Sign Up Now!</h2>
-    <form method="post" action="signup.php">
+    <form method="POST" action="server.php">
     <p>
       <label for="uType" class="floatLabel">Register as: </label><br /><br />
       <input id="userType_Mother" name="uType" type="radio" value="Mother"
@@ -55,7 +55,7 @@
     <p>
       <label for="Contact" class="floatLabel">Contact Number</label>
       <input id="contact_fieldS" name="Contact" type="tel" placeholder="01x-xxxxxxxx"
-       maxlength="12" required>
+       maxlength="12">
     </p>
     <div class= "mothersParam" id="param1">
     <p >
@@ -87,15 +87,18 @@
     <p>
       <button type="submit" name="signup_btn">Create My Account</button>
     </p>
+    </form>
     <p>
       <a href="login.php" style="text-decoration:none"><button>
         Already have an account? Login</button></a>
     </p>
-    </form>
+    <p>
+      <a href="../home.html" style="text-decoration:none"><button >
+        Back to Home Page</button></a>
+    </p>
   </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="js/signup.js"></script>
-
+  <script src="../js/signup.js"></script>
 </body>
 </html>

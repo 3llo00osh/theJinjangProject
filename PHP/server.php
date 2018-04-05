@@ -13,35 +13,46 @@ if(isset($_POST['signup_btn'])){
   $address = mysqli_real_escape_string($db, $_POST['Address']);
   $dob = mysqli_real_escape_string($db, $_POST['DOB']);
   $bDescription = mysqli_real_escape_string($db, $_POST['businessDesc']);
-  //if(!)
 
-  $user_check_query = "SELECT * FROM mother WHERE email='$email' LIMIT 1";
+  $user_check_query = "SELECT * FROM mother WHERE email='$email'";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
 
-  if($user){ //if User exists
-    if($user['email'] === $email){
-      echo '<script language="javascript">';
-      echo 'alert("Email is already used by another User!")';
-      echo '</script>';
-    }
-  }
-
-  if($_POST['uType']=='Mother'){
-    $query = "INSERT INTO mother (email, password, name, contact_no, dob,
-      address) VALUES ('$email', '$password', '$name', '$contact','$dob',
-        '$address')";
-        mysqli_query($db, $query);
-        $_SESSION['email']=$email;
-        $_SESSION['success'] = "You are now logged in";
+  if(empty($name) || empty($email) || empty($password) || empty($rePassword) ||
+  empty($contact) || empty($address) || empty($bDescription)){
+    echo "<script language='javascript'>;
+    alert('Please fill in all the Fields');
+    window.location.href = 'signup.php'</script>";
+    return;
   }
   else{
-    $query = "INSERT INTO client (email, name, password, address, contact_no,
-      business_desc) VALUES ('$email','$name', '$password', '$address', '$contact',
-        '$bDescription')";
-        mysqli_query($db, $query);
-        $_SESSION['email']=$email;
-        $_SESSION['success'] = "You are now logged in";
+    if(mysqli_num_rows($user_check_query)>0){
+      echo "<script language='javascript'>;
+      alert('Email is already used');
+      window.location.href = 'signup.php'</script>";
+    }
+    else if($password == $rePassword ){
+      echo "<script language='javascript'>;
+      alert('Email is already used');
+      window.location.href = 'signup.php'</script>";
+    }else{
+      if($_POST['uType']=='Mother'){
+        $query = "INSERT INTO mother (email, password, name, contact_no, dob,
+          address) VALUES ('$email', '$password', '$name', '$contact','$dob',
+            '$address')";
+            mysqli_query($db, $query);
+            $_SESSION['email']=$email;
+            $_SESSION['success'] = "You are now logged in";
+      }
+        else{
+            $query = "INSERT INTO client (email, name, password, address, contact_no,
+              business_desc) VALUES ('$email','$name', '$password', '$address', '$contact',
+                '$bDescription')";
+                mysqli_query($db, $query);
+                $_SESSION['email']=$email;
+                $_SESSION['success'] = "You are now logged in";
+        }
+    }
   }
 }
 ?>
