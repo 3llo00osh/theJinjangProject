@@ -70,7 +70,7 @@
       <input type="checkbox" name="skills[]" value="Handcraft"
       class="skills"/>Handcraft
       <input type="checkbox" name="skills[]" value="Babysitting"
-      class="skills"/>Babysitting<br />
+      class="skills"/>Babysitting
       <input type="checkbox" name="skills[]" value="Cleaning"
       class="skills"/>Cleaning
       <input type="checkbox" name="skills[]" value="Sewing"
