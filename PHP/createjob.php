@@ -73,12 +73,18 @@ function test_input($data) {
   <span class="error">* <?php echo $joblocEr;?></span>
   <br><br>
   Skills Needed:
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="Cooking") echo "checked";?> value="Cooking">Cooking
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="Handcraft") echo "checked";?> value="Handcraft">Handcraft
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="Babysitting") echo "checked";?> value="Babysitting">Babysitting
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="Cleaning") echo "checked";?> value="Cleaning">Cleaning
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="Sewing") echo "checked";?> value="Sewing">Sewing
-  <input type="checkbox" name="skills" <?php if (isset($skills) && $skills=="General Skills") echo "checked";?> value="General Skills">General Skills
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="Cooking") echo "checked";?> value="Cooking">Cooking
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="Handcraft") echo "checked";?> value="Handcraft">Handcraft
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="Babysitting") echo "checked";?> value="Babysitting">Babysitting
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="Cleaning") echo "checked";?> value="Cleaning">Cleaning
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="Sewing") echo "checked";?> value="Sewing">Sewing
+  <input type="checkbox" name="skills" <?php if (isset($skills) &&
+  $skills=="General Skills") echo "checked";?> value="General Skills">General Skills
   <span class="error">* <?php echo $skillsEr;?></span>
   <br><br>
   Date: <input type="date" name="date" value="<?php echo $date;?>">

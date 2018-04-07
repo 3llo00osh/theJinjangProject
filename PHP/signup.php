@@ -22,7 +22,7 @@
 <body>
   <div>
     <h2>Sign Up Now!</h2>
-    <form method="POST" action="server.php">
+    <form method="POST" action="server.php" id="signupForm">
     <p>
       <label for="uType" class="floatLabel">Register as: </label><br /><br />
       <input id="userType_Mother" name="uType" type="radio" value="Mother"
@@ -32,20 +32,20 @@
     </p>
     <p>
       <label for="Email" class="floatLabel">Email</label>
-      <input id="email_fieldS" name="Email" type="text">
+      <input required id="email_fieldS" name="Email" type="text">
     </p>
     <p>
       <label for="Name" class="floatLabel">Name</label>
-      <input id="name_fieldS" name="Name" type="text">
+      <input required id="name_fieldS" name="Name" type="text">
     </p>
     <p>
       <label for="password" class="floatLabel">Password</label>
-      <input id="password_fieldS" name="password" type="password">
+      <input required id="password_fieldS" name="password" type="password">
       <span>Password length at least 6 characters</span>
     </p>
     <p>
       <label for="confirm_password" class="floatLabel">Confirm Password</label>
-      <input id="passwordRe_fieldS" name="confirm_password" type="password">
+      <input required id="passwordRe_fieldS" name="confirm_password" type="password">
       <span>Your passwords do not match</span>
     </p>
     <p>
@@ -54,8 +54,8 @@
     </p>
     <p>
       <label for="Contact" class="floatLabel">Contact Number</label>
-      <input id="contact_fieldS" name="Contact" type="tel" placeholder="01x-xxxxxxxx"
-       maxlength="12">
+      <input required id="contact_fieldS" name="Contact" type="tel" placeholder=
+      "01x-xxxxxxxx" maxlength="12">
     </p>
     <div class= "mothersParam" id="param1">
     <p >

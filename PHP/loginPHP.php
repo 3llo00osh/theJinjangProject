@@ -17,7 +17,7 @@ if(isset($_POST['login_btn'])){
 
   if(mysqli_num_rows($findMother) == 1 || mysqli_num_rows($findClient) == 1){
     $_SESSION['email'] = $email;
-    header('location: motherProfile.php');
+    header('location: userProfile.php');
     //header('location: index.php');
   }else if($email == '' || $password == ''){
     $message = "Please fill in both fields";

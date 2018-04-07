@@ -1,7 +1,7 @@
 //Problem: Hints are shown even when form is valid
 //Solution: Hide and show them at appropriate times
 var $password = $("#password_fieldS");
-var $confirmPassword = $("#confirm_password");
+var $confirmPassword = $("#passwordRe_fieldS");
 
 //Hide hints
 $("div span").hide();
@@ -39,6 +39,10 @@ function passwordEvent(){
         $confirmPassword.next().show();
       }
     }
+    $('#signupForm').submit(function() {
+      return canSubmit();
+
+      });
 
     //When event happens on password input
     $password.focus(passwordEvent).keyup(passwordEvent).
