@@ -17,10 +17,10 @@ if(isset($_POST['signup_btn'])){
   $dob = mysqli_real_escape_string($db, $_POST['DOB']);
   $bDescription = mysqli_real_escape_string($db, $_POST['businessDesc']);
 
-  /*if($_POST['skills'] != ""){
+  if($_POST['skills'] != ""){
     $skillsString = implode(" ", $_POST['skills']);
     $skillsString = mysqli_real_escape_string($db, $skillsString);
-  }*/
+  }
   if($_POST['uType']=='Mother') {
     $user_check_query = "SELECT * FROM mother WHERE email='$email'";
   }
@@ -52,13 +52,13 @@ if(isset($_POST['signup_btn'])){
     }else{
       if($_POST['uType']=='Mother'){
         $query = "INSERT INTO mother (email, password, name, contact_no, dob,
-          address,/*skills,*/check_bit) VALUES ('$email', '$password','$name',
-            '$contact','$dob', '$address',/*'$skillsString',*/0)";
+          address,skills,check_bit) VALUES ('$email', '$password','$name',
+            '$contact','$dob', '$address','$skillsString',0)";
             if(mysqli_query($db, $query)){
               $_SESSION['email']=$email;
               $_SESSION['success'] = "You are now logged in";
-              /*echo "<script type=\"text/javascript\">location.href =
-              'createjob.php';</script>";*/
+              echo "<script type=\"text/javascript\">location.href =
+              'createjob.php';</script>";
             }
             else{
               echo "<script language='javascript'>;
@@ -75,8 +75,8 @@ if(isset($_POST['signup_btn'])){
                 if(mysqli_query($db, $query)){
                   $_SESSION['email']=$email;
                   $_SESSION['success'] = "You are now logged in";
-                  /*echo "<script type=\"text/javascript\">location.href =
-                  'createjob.php';</script>";*/
+                  echo "<script type=\"text/javascript\">location.href =
+                  'createjob.php';</script>";
                 }
                 else{
                   echo "<script language='javascript'>;
