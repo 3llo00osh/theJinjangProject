@@ -66,18 +66,40 @@
     <p class= "mothersParam" id="param1">
       <label class="floatLabel">Select your Skills</label><br />
       <input type="checkbox" name="skills[]" value="Cooking"
-      class="skills"/>Cooking
+      class="get_value"/>Cooking
       <input type="checkbox" name="skills[]" value="Handcraft"
-      class="skills"/>Handcraft
+      class="get_value"/>Handcraft
       <input type="checkbox" name="skills[]" value="Babysitting"
-      class="skills"/>Babysitting
+      class="get_value"/>Babysitting
       <input type="checkbox" name="skills[]" value="Cleaning"
-      class="skills"/>Cleaning
+      class="get_value"/>Cleaning
       <input type="checkbox" name="skills[]" value="Sewing"
-      class="skills"/>Sewing
+      class="get_value"/>Sewing
       <input type="checkbox" name="skills[]" value="General Skills"
-      class="skills"/>General Skills
+      class="get_value"/>General Skills
     </p>
+    <script>
+    $(document).ready(function(){
+      $('#submit').click(function(){
+        var insert = [];
+        $('.get_value').each(function(){
+          if($(this).is(":checked"))
+          {
+            insert.push($(this).val());
+          }
+        });
+        insert = insert.toString();
+        $.ajax({
+          url:"serverconnect.php",
+          method: "POST",
+          data:{insert:insert},
+          success:function(data){
+            $('#result').html(data);
+          }
+        });
+      });
+    });
+    </script>
     </div>
     <p class="clientsParam" id="param2">
       <label for="businessDesc" class="floatLabel">Business Description</label>
