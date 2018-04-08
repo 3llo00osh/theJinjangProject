@@ -58,7 +58,7 @@ if(isset($_POST['signup_btn'])){
               $_SESSION['email']=$email;
               $_SESSION['success'] = "You are now logged in";
               echo "<script type=\"text/javascript\">location.href =
-              'createjob.php';</script>";
+              'showAllJobs.php';</script>";
             }
             else{
               echo "<script language='javascript'>;
@@ -76,7 +76,7 @@ if(isset($_POST['signup_btn'])){
                   $_SESSION['email']=$email;
                   $_SESSION['success'] = "You are now logged in";
                   echo "<script type=\"text/javascript\">location.href =
-                  'createjob.php';</script>";
+                  'createJob2.php';</script>";
                 }
                 else{
                   echo "<script language='javascript'>;

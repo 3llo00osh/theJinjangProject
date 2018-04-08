@@ -15,10 +15,15 @@ if(isset($_POST['login_btn'])){
   $findClient = mysqli_query($db, "SELECT * FROM `client` WHERE `email` = '$email'
   AND `password` = '$password';");
 
-  if(mysqli_num_rows($findMother) == 1 || mysqli_num_rows($findClient) == 1){
+  if(mysqli_num_rows($findMother) == 1){
     $_SESSION['email'] = $email;
-    header('location: userProfile.php');
+    header('location:showAllJobs.php');
     //header('location: index.php');
+  }
+  else if(mysqli_num_rows($findClient) == 1){
+      $_SESSION['email'] = $email;
+      header('location:createJob2.php');
+  }
   }else if($email == '' || $password == ''){
     $message = "Please fill in both fields";
     echo "<script type='text/javascript'>alert('$message');

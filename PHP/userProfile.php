@@ -8,9 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 </head>
 <body>
   <div class="container">
@@ -105,19 +103,5 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/userProfile.js"></script>
-  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCG8hosG4Lw029dlblKr_HwIfAmsegq2CU",
-      authDomain: "thejinjangproject.firebaseapp.com",
-      databaseURL: "https://thejinjangproject.firebaseio.com",
-      projectId: "thejinjangproject",
-      storageBucket: "thejinjangproject.appspot.com",
-      messagingSenderId: "905922139384"
-    };
-    firebase.initializeApp(config);
-  </script>
 </body>
 </html>
