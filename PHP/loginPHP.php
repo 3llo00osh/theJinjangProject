@@ -24,7 +24,7 @@ if(isset($_POST['login_btn'])){
       $_SESSION['email'] = $email;
       header('location:createJob2.php');
   }
-  }else if($email == '' || $password == ''){
+  else if($email == '' || $password == ''){
     $message = "Please fill in both fields";
     echo "<script type='text/javascript'>alert('$message');
     window.location.href = 'login.php'</script>";

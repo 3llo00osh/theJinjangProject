@@ -22,7 +22,9 @@ if(isset($_POST['createjob_btn'])){
     window.location.href = 'createjob.php'</script>";
     return;
   } else {
-    $query = "INSERT INTO jobs (job_name, job_description, job_location, skills, job_date, job_duration, pay_rate, check_bit) VALUES ('$jobname', '$jobdesc', '$jobloc', '$skills', '$date', '$duration', '$payrate', 0)";
+    $query = "INSERT INTO jobs (job_name, job_description, job_location, skills,
+       job_date, job_duration, pay_rate, check_bit) VALUES ('$jobname',
+         '$jobdesc', '$jobloc', '$skills', '$date', '$duration', '$payrate', 0)";
     if(mysqli_query($db, $query)){
       $_SESSION['success'] = "You have created a job";
     }
