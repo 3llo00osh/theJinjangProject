@@ -18,6 +18,10 @@
     });
   });
   </script>
+  <video autoplay muted loop id="myVideo">
+  <source src="../videos/hammer.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 </head>
 <body>
   <div>
@@ -26,9 +30,9 @@
     <p>
       <label for="uType" class="floatLabel">Register as: </label><br /><br />
       <input id="userType_Mother" name="uType" type="radio" value="Mother"
-      class="userType" checked="checked"/>Mother
+      class="userType" checked="checked"/><strong>Mother</strong>
       <input id="userType_Client" name="uType" type="radio" value="Client"
-      class="userType"/>Client
+      class="userType"/><strong>Client</strong>
     </p>
     <p>
       <label for="Email" class="floatLabel">Email</label>
@@ -66,17 +70,17 @@
     <p class= "mothersParam" id="param1">
       <label class="floatLabel">Select your Skills</label><br />
       <input type="checkbox" name="skills[]" value="Cooking"
-      class="get_value"/>Cooking
+      class="get_value"/><strong>Cooking</strong>
       <input type="checkbox" name="skills[]" value="Handcraft"
-      class="get_value"/>Handcraft
+      class="get_value"/><strong>Handcraft</strong>
       <input type="checkbox" name="skills[]" value="Babysitting"
-      class="get_value"/>Babysitting
+      class="get_value"/><strong>Babysitting</strong>
       <input type="checkbox" name="skills[]" value="Cleaning"
-      class="get_value"/>Cleaning
+      class="get_value"/><strong>Cleaning</strong>
       <input type="checkbox" name="skills[]" value="Sewing"
-      class="get_value"/>Sewing
+      class="get_value"/><strong>Sewing</strong>
       <input type="checkbox" name="skills[]" value="General Skills"
-      class="get_value"/>General Skills
+      class="get_value"/><strong>General Skills</strong>
     </p>
     <script>
     $(document).ready(function(){

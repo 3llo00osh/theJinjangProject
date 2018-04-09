@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <div>
+  <video autoplay muted loop id="myVideo">
+  <source src="../videos/construction.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+  <div id="login-form">
     <h2>Log In Now!</h2>
     <form method="POST" action="loginPHP.php">
       <p>
