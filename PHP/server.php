@@ -5,7 +5,7 @@ session_start();
 $db = mysqli_connect('localhost', 'root', '', 'thejinjangproject');
 
 //When signup button is clicked
-if(isset($_POST['signup_btn'])){
+if(isset($_POST['signup_btn']) && isset($_POST['insert'])){
   $skillsString=" ";
 
   $name = mysqli_real_escape_string($db, $_POST['Name']);
@@ -17,10 +17,7 @@ if(isset($_POST['signup_btn'])){
   $dob = mysqli_real_escape_string($db, $_POST['DOB']);
   $bDescription = mysqli_real_escape_string($db, $_POST['businessDesc']);
 
-  if($_POST['skills'] != ""){
-    $skillsString = implode(" ", $_POST['skills']);
-    $skillsString = mysqli_real_escape_string($db, $skillsString);
-  }
+
   if($_POST['uType']=='Mother') {
     $user_check_query = "SELECT * FROM mother WHERE email='$email'";
   }
@@ -30,12 +27,16 @@ if(isset($_POST['signup_btn'])){
 
   $result = mysqli_query($db, $user_check_query) or die(mysqli_error($db));
 
-  if(empty($name) || empty($email) || empty($password) || empty($rePassword) ||
-  empty($contact) || empty($address) || empty($bDescription)){
+  if(empty($name) || empty($email) || empty($password) || empty($skills) ||
+  empty($rePassword) || empty($contact) || empty($address) || empty($bDescription)){
     echo "<script language='javascript'>;
     alert('Please fill in all the Fields');
     window.location.href = 'signup.php'</script>";
     return;
+  }
+  if($_POST['skills'] != ""){
+    $skillsString = implode(" ", $_POST['skills']);
+    $skillsString = mysqli_real_escape_string($db, $skillsString);
   }
   else{
     if(mysqli_num_rows($result)>0){
@@ -52,8 +53,8 @@ if(isset($_POST['signup_btn'])){
     }else{
       if($_POST['uType']=='Mother'){
         $query = "INSERT INTO mother (email, password, name, contact_no, dob,
-          address,skills,check_bit) VALUES ('$email', '$password','$name',
-            '$contact','$dob', '$address','$skillsString',0)";
+          address, skills, check_bit) VALUES ('$email', '$password','$name',
+            '$contact','$dob', '$address', '".$_POST["insert"]."', '$skillsString',0)";
             if(mysqli_query($db, $query)){
               $_SESSION['email']=$email;
               $_SESSION['success'] = "You are now logged in";
@@ -76,7 +77,7 @@ if(isset($_POST['signup_btn'])){
                   $_SESSION['email']=$email;
                   $_SESSION['success'] = "You are now logged in";
                   echo "<script type=\"text/javascript\">location.href =
-                  'createJob2.php';</script>";
+                  'clienthomes.php';</script>";
                 }
                 else{
                   echo "<script language='javascript'>;
