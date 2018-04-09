@@ -1,13 +1,6 @@
 .clientsParam{
   display: none;
 }
-
-body {
-  background: #384047;
-  font-family: sans-serif;
-  font-size: 10px;
-}
-
 div:not(.mothersParam) {
   background: #fff;
   padding: 1em 5em 2em;
@@ -41,7 +34,7 @@ div p, form {
 textarea{
   resize: none;
 }
-div input:not( .userType),
+div input:not( .skills),
 textarea, button{
   display: block;
   box-sizing: border-box;
@@ -54,7 +47,6 @@ div input[type="text"],
 div input[type="password"],
 div input[type="tel"],
 div input[type="date"],
-div input[type="email"],
 textarea {
   background: #fff;
   border: 1px solid #dbdbdb;

@@ -19,7 +19,7 @@
   <body>
     <div class="row">
       <form>
-        <div class="col-md-10 offset-md-2" style="padding-top: 50px">
+        <div class="col-md-11 offset-md-1" style="padding-top: 50px">
           <div class="row">
             <div class="col-md-12">
               <div class="alert alert-info" role="alert">
@@ -57,14 +57,14 @@
 
           echo "<table class='table'>";
           echo "<tr>";
-          echo "<th>Name</th>";
-          echo "<th>Description</th>";
-          echo "<th>Location</th>";
-          echo "<th>Skills</th>";
-          echo "<th>Date</th>";
-          echo "<th>Duration</th>";
+          echo "<th>Job Title</th>";
+          echo "<th>Job Description</th>";
+          echo "<th>Job Location</th>";
+          echo "<th>Skills Needed</th>";
+          echo "<th>Start\nDate</th>";
+          echo "<th>Duration\n(Days)</th>";
           echo "<th>Pay Rate</th>";
-          echo "<th>Action</th>";
+          echo "<th>Job Status</th>";
           echo "</tr>";
           $jobName = "";
           while($row =  $result->fetch_assoc())
