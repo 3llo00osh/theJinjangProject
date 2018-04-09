@@ -2,19 +2,12 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
   "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-
+  <link rel="stylesheet" href="../css/createJob.css">
   <style>
   .error{
     color:red;
@@ -114,27 +107,27 @@
               Job Location: <input type="text" class="form-control" name="jobloc"
               value="<?php echo $jobloc;?>">
               <span class="error"><?php echo$joblocEr;?></span>
-              <br><br>
+              <br>
               <div class="radio-inline">
-                Skills Needed:
+                Skills Needed:<br /><br />
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Cooking") echo "checked";?> value="Cooking">Cooking
+                && $skills=="Cooking") echo "checked";?> value="Cooking"> Cooking&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Handcraft") echo "checked";?> value="Handcraft">Handcraft
+                && $skills=="Handcraft") echo "checked";?> value="Handcraft"> Handcraft&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Babysitting") echo "checked";?> value="Babysitting">Babysitting
+                && $skills=="Babysitting") echo "checked";?> value="Babysitting"> Babysitting<br /><br />
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Cleaning") echo "checked";?> value="Cleaning">Cleaning
+                && $skills=="Cleaning") echo "checked";?> value="Cleaning"> Cleaning&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Sewing") echo "checked";?> value="Sewing">Sewing
+                && $skills=="Sewing") echo "checked";?> value="Sewing"> Sewing&emsp;&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="General Skills") echo "checked";?> value="General Skills">General Skills
+                && $skills=="General Skills") echo "checked";?> value="General Skills"> General Skills
                 <span class="error"> <?php echo$skillsEr;?></span>
                 <br><br>
               </div>
               Date: <input type="date" class="form-control" name="date" value="<?php echo $date;?>">
               <span class="error"> <?php echo $dateEr;?></span><br>
-              Duration: <input type="number" class="form-control" name="duration"
+              Duration (in days): <input type="number" class="form-control" name="duration"
                value="<?php echo $duration;?>">
               <span class="error"> <?php echo$durationEr;?></span><br>
               Pay Rate: <input class="form-control" type="number" name="payrate"

@@ -33,5 +33,6 @@ if(isset($_POST['login_btn'])){
     echo "<script type='text/javascript'>alert('$message2');
     window.location.href = 'login.php'</script>";
   }
+}
 $db->close();
 ?>
