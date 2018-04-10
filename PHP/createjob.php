@@ -22,6 +22,7 @@
     <p>
       <label for="jobLocation" class="floatLabel">Job Location: </label>
       <input id="jobloc_field" name="jobLocation" type="text">
+
     </p>
       <label class="floatLabel">Skills Needed: </label>
       <input type="checkbox" name="skills" value="Cooking"
@@ -38,6 +39,7 @@
       class="skills">General Skills<br />
       <br/>
     <p>
+      
       <label for="date" class="floatLabel">Date: </label>
       <input id="date_field" name="date" type="date">
     </p>
