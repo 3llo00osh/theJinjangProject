@@ -70,40 +70,18 @@
     <p class= "mothersParam" id="param1">
       <label class="floatLabel">Select your Skills</label><br />
       <input type="checkbox" name="skills[]" value="Cooking"
-      class="get_value"/><strong>Cooking</strong>
+      class="skills"/><strong>Cooking</strong>
       <input type="checkbox" name="skills[]" value="Handcraft"
-      class="get_value"/><strong>Handcraft</strong>
+      class="skills"/><strong>Handcraft</strong>
       <input type="checkbox" name="skills[]" value="Babysitting"
-      class="get_value"/><strong>Babysitting</strong>
+      class="skills"/><strong>Babysitting</strong>
       <input type="checkbox" name="skills[]" value="Cleaning"
-      class="get_value"/><strong>Cleaning</strong>
+      class="skills"/><strong>Cleaning</strong>
       <input type="checkbox" name="skills[]" value="Sewing"
-      class="get_value"/><strong>Sewing</strong>
+      class="skills"/><strong>Sewing</strong>
       <input type="checkbox" name="skills[]" value="General Skills"
-      class="get_value"/><strong>General Skills</strong>
+      class="skills"/><strong>General Skills</strong>
     </p>
-    <script>
-    $(document).ready(function(){
-      $('#submit').click(function(){
-        var insert = [];
-        $('.get_value').each(function(){
-          if($(this).is(":checked"))
-          {
-            insert.push($(this).val());
-          }
-        });
-        insert = insert.toString();
-        $.ajax({
-          url:"serverconnect.php",
-          method: "POST",
-          data:{insert:insert},
-          success:function(data){
-            $('#result').html(data);
-          }
-        });
-      });
-    });
-    </script>
     </div>
     <p class="clientsParam" id="param2">
       <label for="businessDesc" class="floatLabel">Business Description</label>

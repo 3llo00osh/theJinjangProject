@@ -47,7 +47,7 @@
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
               <input class="form-control" type="text" id="email_fieldE">
-            </div>
+            </</div>div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>

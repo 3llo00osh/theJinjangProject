@@ -7,7 +7,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity=
   "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
   crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/createJob.css">
   <style>
   .error{
     color:red;
@@ -22,10 +21,10 @@
   <body>
 
     <?php
+
     // define variables and set to empty values
     $jobname  = $jobdesc = $jobloc = $skills = $date = $duration = $payrate ="";
-    $jobnameEr  = $jobdescEr = $joblocEr = $skillsEr = $dateEr = $durationEr =
-    $payrateEr ="";
+    $jobnameEr  = $jobdescEr = $joblocEr = $skillsEr = $dateEr = $durationEr = $payrateEr ="";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -72,13 +71,16 @@
       }
       $db = mysqli_connect('localhost', 'root', '', 'thejinjangproject');
 
-      $query = "INSERT INTO jobs (job_name,job_Description,job_location,skills,
-        job_date,job_duration,pay_rate,check_bit) VALUES ('$jobname','$jobdesc',
-          '$jobloc','$skills','$date','$duration','$payrate',0)";
+      $query = "INSERT INTO jobs (job_name,job_Description,job_location,skills,job_date,
+        job_duration,pay_rate,check_bit,job_reviews) VALUES ('$jobname','$jobdesc'
+          ,'$jobloc','$skills','$date',
+          '$duration','$payrate',0,'')";
           if(mysqli_query($db, $query)){
             echo "<script language='javascript'>;
             alert('Job is saved!')
             </script>";
+            echo "<script language='javascript'>;
+            window.location.href = 'createjob2.php'</script>";
           }
 
         }
@@ -90,24 +92,23 @@
           return $data;
         }
         ?>
-
-        <duv class="row" >
-          <div class="col-md-6 offset-md-3"><br /><br />
-            <h2>Add Job</h2>
-            <form id="form" method="post" action="<?php echo htmlspecialchars
-            ($_SERVER["PHP_SELF"]);?>">
+        <form id="form" method="post" action="<?php echo htmlspecialchars
+        ($_SERVER["PHP_SELF"]);?>">
+          <duv class="row" style="padding-top: 10px">
+            <div class="col-md-6 offset-md-3"><br /><br />
+              <h2>Add Job</h2>
               Job Name: <input class="form-control" type="text" name="jobname"
               value="<?php echo $jobname;?>">
               <span class="error"><?php echo $jobnameEr;?></span>
               <br><br>
               Job Description: <input type="text" class="form-control" name="jobdesc"
-              value="<?php echo $jobdesc;?>">
+               value="<?php echo $jobdesc;?>">
               <span class="error"><?php echo $jobdescEr;?></span>
               <br><br>
               Job Location: <input type="text" class="form-control" name="jobloc"
               value="<?php echo $jobloc;?>">
               <span class="error"><?php echo$joblocEr;?></span>
-              <br>
+              <br><br>
               <div class="radio-inline">
                 Skills Needed:<br /><br />
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
@@ -119,24 +120,27 @@
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
                 && $skills=="Cleaning") echo "checked";?> value="Cleaning"> Cleaning&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
-                && $skills=="Sewing") echo "checked";?> value="Sewing"> Sewing&emsp;&emsp;
+                && $skills=="Sewing") echo "checked";?> value="Sewing"> Sewing&emsp;
                 <input type="checkbox" name="skills[]" <?php if (isset($skills)
                 && $skills=="General Skills") echo "checked";?> value="General Skills"> General Skills
                 <span class="error"> <?php echo$skillsEr;?></span>
                 <br><br>
               </div>
-              Date: <input type="date" class="form-control" name="date" value="<?php echo $date;?>">
+              Date: <input type="date" class="form-control" name="date" value=
+              "<?php echo $date;?>">
               <span class="error"> <?php echo $dateEr;?></span><br>
-              Duration (in days): <input type="number" class="form-control" name="duration"
+              Duration: <input type="number" class="form-control" name="duration"
                value="<?php echo $duration;?>">
               <span class="error"> <?php echo$durationEr;?></span><br>
               Pay Rate: <input class="form-control" type="number" name="payrate"
-               value="<?php echo $payrate;?>">
+              value="<?php echo $payrate;?>">
               <span class="error"> <?php echo$payrateEr;?></span><br>
               <input type="submit" class="btn btn-success" name="submit" value="Submit">
-            </form>
-          </div>
-        </duv>
-
+            </div>
+            <div class="col-md-2 offset-md-1">
+              <a type="submit" class="btn btn-info" href="logout.php"> LogOut </a>
+            </div>
+          </duv>
+        </form>
       </body>
       </html>

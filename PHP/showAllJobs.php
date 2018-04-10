@@ -17,9 +17,10 @@
     </script>
   </head>
   <body>
-    <div class="row">
-      <form>
-        <div class="col-md-11 offset-md-1" style="padding-top: 50px">
+
+    <form method="get">
+      <div class="row" style="padding-top: 50px">
+        <div class="col-md-11 offset-md-1">
           <div class="row">
             <div class="col-md-12">
               <div class="alert alert-info" role="alert">
@@ -66,35 +67,24 @@
           echo "<th>Pay Rate</th>";
           echo "<th>Job Status</th>";
           echo "</tr>";
-          $jobName = "";
-          while($row =  $result->fetch_assoc())
+          while($row =  mysqli_fetch_row($result))
           {
-            $i = 0;
-            echo "<tr>";
-            foreach ($row as $value) {
-              $i++;
-              if($value=="0")
-              continue;
-              if($i==1)
-              $jobName = $value;
-              if($i == 8 && $value == "1")
-              break;
-              if($i==4 && $sotryBy != "" && $sotryBy != "All"){
-                if(!strpos($value, $sotryBy)){
-                  echo "<td></td>";
-                  continue;
-                }
-                else{
-                  echo "<td>$value</td>";
-                }
-
+            if($row[7] == "1")
+            continue;
+            if($sotryBy != "" && $sotryBy != "All"){
+              if(strpos($row[3],$sotryBy) === false){
+                echo $row[3];
+                continue;
               }
-              else{
-                echo "<td>$value </td>";
-              }
-
             }
-            echo"<td><a class='btn btn-info' href='reviews.php/?jobName=".urlencode($jobName)."'><b>Apply for this job</b></a></td>";
+            echo "<tr>";
+            for($i =0; $i < count($row);$i++){
+              if($i==7 || $i == 8){
+                continue;
+              }
+              echo "<td>{$row[$i]}</td>";
+            }
+            echo"<td><a class='btn btn-info' href='reviews.php/?jobName=".urlencode($row[0])."'><b>Apply for this job</b></a></td>";
             echo "</tr>";
           }
           echo "</table>";
@@ -102,7 +92,8 @@
           mysqli_close($con);
           ?>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
+
   </body>
   </html>
