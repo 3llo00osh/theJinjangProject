@@ -23,13 +23,30 @@ if(isset($_POST['Submit'])){
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 </head>
 <body>
-<form  method="post">
     <div class="row" style="padding-top: 30px">
         <div class="col-md-6 offset-md-3">
-            <textarea  class="form-control" name="reviews" placeholder="reviews..." rows="4" cols="50"></textarea><br>
-            <input type="submit" class="btn btn-info" name="Submit" value="Submit">
+            <?php
+                $db = mysqli_connect('localhost', 'root', '', 'thejinjangproject');
+                $jobName = $_GET['jobName'];
+                if($jobName != ""){
+                    $query = "SELECT * FROM jobs WHERE job_name = '$jobName'";
+                    $result = mysqli_query($db,$query);
+                    if(mysqli_num_rows($result) > 0) {
+                        $row = mysqli_fetch_row($result);
+
+                        echo "<label><b>Job Name:</b></label> &nbsp;&nbsp;&nbsp;   " . $row[0] . "<br>";
+                        echo "<label><b>Job Description:</b></label>&nbsp;&nbsp;&nbsp;   " . $row[1] . "<br>";
+                        echo "<label><b>Job Location:</b></label>&nbsp;&nbsp;&nbsp;   " . $row[2] . "<br>";
+                        echo "<label><b>Job Skills:</b></label> &nbsp;&nbsp;&nbsp;  " . $row[3] . "<br>";
+                        echo "<label><b>Job Date:</b></label>  &nbsp;&nbsp;&nbsp; " . $row[4] . "<br>";
+                        echo "<label><b>Job Duration:</b></label>  &nbsp;&nbsp;&nbsp; " . $row[5] . "<br>";
+                        echo "<label><b>Pay Rate:</b></label>  &nbsp;&nbsp;&nbsp; " . $row[6] . "<br>";
+                        echo "<label><b>Job Reviews:</b></label>  &nbsp;&nbsp;&nbsp; " . $row[8]."<br>";
+                    }
+                }
+            ?>
+            <a class="btn btn-info" href="../showAllJobs.php">Go Back</a>
         </div>
     </div>
-</form>
 </body>
 </html>

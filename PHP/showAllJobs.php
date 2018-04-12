@@ -17,10 +17,9 @@
     </script>
   </head>
   <body>
-
     <form method="get">
-      <div class="row" style="padding-top: 50px">
-        <div class="col-md-11 offset-md-1">
+      <div class="row" style="padding-top: 10px">
+        <div class="col-md-8 offset-md-1" >
           <div class="row">
             <div class="col-md-12">
               <div class="alert alert-info" role="alert">
@@ -30,15 +29,15 @@
           </div>
           <div class="row">
             <div class="col-md-4">
-              <b>Filter By</b><br /><br />
               <select onchange="this.form.submit()" name="skills_menue" class="form-control">
-                <option selected value="all">All</option>
+                <option value=""><b>Filter By</b></option>
                 <option value="Cooking">Cooking</option>
                 <option value="Handcraft">Handcraft</option>
                 <option value="Babysitting">Babysitting</option>
                 <option value="Cleaning">Cleaning</option>
                 <option value="Sewing">Sewing</option>
                 <option value="General Skills">General Skills</option>
+                <option value="All">All</option>
               </select><br>
             </div>
           </div>
@@ -58,22 +57,19 @@
 
           echo "<table class='table'>";
           echo "<tr>";
-          echo "<th>Job Title</th>";
-          echo "<th>Job Description</th>";
-          echo "<th>Job Location</th>";
-          echo "<th>Skills Needed</th>";
-          echo "<th>Start\nDate</th>";
-          echo "<th>Duration\n(Days)</th>";
+          echo "<th>Name</th>";
+          echo "<th>Description</th>";
+          echo "<th>Location</th>";
+          echo "<th>Skills</th>";
+          echo "<th>Date</th>";
+          echo "<th>Duration</th>";
           echo "<th>Pay Rate</th>";
-          echo "<th>Job Status</th>";
+          echo "<th>Action</th>";
           echo "</tr>";
           while($row =  mysqli_fetch_row($result))
           {
-            if($row[7] == "1")
-            continue;
             if($sotryBy != "" && $sotryBy != "All"){
               if(strpos($row[3],$sotryBy) === false){
-                echo $row[3];
                 continue;
               }
             }
@@ -84,6 +80,9 @@
               }
               echo "<td>{$row[$i]}</td>";
             }
+            if($row[7] == "1")
+            echo"<td><a class='btn btn-info' href='showReviews.php/?jobName=".urlencode($row[0])."'><b>Job Done!</b></a></td>";
+            else
             echo"<td><a class='btn btn-info' href='reviews.php/?jobName=".urlencode($row[0])."'><b>Apply for this job</b></a></td>";
             echo "</tr>";
           }
@@ -92,8 +91,10 @@
           mysqli_close($con);
           ?>
         </div>
+        <div class="col-md-2 offset-md-1">
+          <a type="submit" class="btn btn-info" href="logout.php"> LogOut </a>
+        </div>
       </div>
     </form>
-
   </body>
   </html>

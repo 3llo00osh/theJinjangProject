@@ -47,6 +47,7 @@ textarea{
   resize: none;
 }
 div input:not( .skills),
+input:not( .userType),
 textarea, button{
   display: block;
   box-sizing: border-box;

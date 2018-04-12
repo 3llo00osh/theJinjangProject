@@ -68,13 +68,13 @@
       value="1990-01-01" max="2000-01-01" class="dateofbirth">
     </p>
     <p class= "mothersParam" id="param1">
-      <label class="floatLabel">Select your Skills</label><br />
+      <label class="floatLabel">Select your Skills</label><br /><br />
       <input type="checkbox" name="skills[]" value="Cooking"
       class="skills"/><strong>Cooking</strong>
       <input type="checkbox" name="skills[]" value="Handcraft"
       class="skills"/><strong>Handcraft</strong>
       <input type="checkbox" name="skills[]" value="Babysitting"
-      class="skills"/><strong>Babysitting</strong>
+      class="skills"/><strong>Babysitting</strong><br />
       <input type="checkbox" name="skills[]" value="Cleaning"
       class="skills"/><strong>Cleaning</strong>
       <input type="checkbox" name="skills[]" value="Sewing"
