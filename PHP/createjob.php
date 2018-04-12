@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -9,6 +10,57 @@
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+=======
+  <meta charset="UTF-8">
+  <title>The Jinjang Project - Create Job</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/jQuery.js"></script>
+</head>
+<body>
+  <div>
+    <h2>Create A Job</h2>
+    <form method="post" action="createjob.php">
+    <p>
+      <label for="jobName" class="floatLabel">Job Name: </label>
+      <input id="jobname_field" name="jobName" type="text">
+    </p>
+    <p>
+      <label for="jobDescription" class="floatLabel">Job Description: </label>
+      <input id="jobdesc_field" name="jobDescription" type="text">
+    </p>
+    <p>
+      <label for="jobLocation" class="floatLabel">Job Location: </label>
+      <input id="jobloc_field" name="jobLocation" type="text">
+
+    </p>
+      <label class="floatLabel">Skills Needed: </label>
+      <input type="checkbox" name="skills" value="Cooking"
+      class="skills">Cooking<br />
+      <input type="checkbox" name="skills" value="Handcraft"
+      class="skills">Handcraft<br />
+      <input type="checkbox" name="skills" value="Babysitting"
+      class="skills">Babysitting<br />
+      <input type="checkbox" name="skills" value="Cleaning"
+      class="skills">Cleaning<br />
+      <input type="checkbox" name="skills" value="Sewing"
+      class="skills">Sewing<br />
+      <input type="checkbox" name="skills" value="General Skills"
+      class="skills">General Skills<br />
+      <br/>
+    <p>
+      
+      <label for="date" class="floatLabel">Date: </label>
+      <input id="date_field" name="date" type="date">
+    </p>
+    <p>
+      <label for="duration" class="floatLabel">Duration: </label>
+      <input id="dur_field" name="duration" type="number">
+    </p>
+    <p>
+      <label for="payRate" class="floatLabel">Pay Rate: </label>
+      <input id="payrate_field" name="payRate" type="number">
+    </p>
+>>>>>>> 0f6be1a089ba6950684321b2ae192bbf27433b4b
 
     <style>
         .error{
